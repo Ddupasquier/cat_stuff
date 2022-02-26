@@ -1,0 +1,50 @@
+import React from "react";
+import Card from "./Card";
+import { useEffect, useState } from "react";
+import Spinner from "react-bootstrap/Spinner";
+import { Switch, Route } from "react-router-dom";
+import Cats from "./Cats";
+import CatToys from "./CatToys";
+
+function Main() {
+  const [owners, setOwners] = useState([]);
+
+  useEffect(() => {
+    fetch("/cat_owners")
+      .then((res) => res.json())
+      .then((owners) => {
+        setOwners(owners);
+      });
+  }, []);
+
+  if (owners === null) {
+    return (
+      <Spinner animation="border" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>
+    );
+  }
+
+  const allOwners = owners.map((owner) => {
+    return <Card owner={owner} key={owner.id} />;
+  });
+
+  return (
+    <main>
+      <Switch>
+        <Route path="/cats">
+          <Cats />
+        </Route>
+        <Route path="/cat_toys">
+          <CatToys />
+        </Route>
+        <Route path="/">{allOwners}</Route>
+        <Route path="*">
+          <h1>404: You done goofed</h1>
+        </Route>
+      </Switch>
+    </main>
+  );
+}
+
+export default Main;
