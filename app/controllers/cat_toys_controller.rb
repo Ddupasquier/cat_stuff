@@ -9,7 +9,7 @@ class CatToysController < ApplicationController
         else
         cat_toys = CatToy.all
         end
-        render json: cat_toys, status: :ok
+        render json: cat_toys, except: [:created_at, :updated_at], status: :ok
     end
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

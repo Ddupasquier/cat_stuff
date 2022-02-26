@@ -2,20 +2,22 @@ import Nav from "react-bootstrap/Nav";
 import React, { useState } from "react";
 
 function TopNav() {
-  const [tab, setTab] = useState("")
+  const [tab, setTab] = useState("/")
 
   return (
-    <Nav variant="tabs" defaultActiveKey="/">
-      <Nav.Item>
-        <Nav.Link href="/">Owners</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link href="/cats" eventKey="link-1">Cats</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link href="/cat_toys" eventKey="link-2">Toys</Nav.Link>
-      </Nav.Item>
-    </Nav>
+    <Nav variant="pills" defaultActiveKey="/home">
+  <Nav.Item>
+    <Nav.Link href="/home">Owners</Nav.Link>
+  </Nav.Item>
+  <Nav.Item>
+    <Nav.Link href="/cats" eventKey="link-1">Cats</Nav.Link>
+  </Nav.Item>
+  <Nav.Item>
+    <Nav.Link href="/cat_toys" eventKey="link-2">
+      Toys
+    </Nav.Link>
+  </Nav.Item>
+</Nav>
   )
 
 {/* <Nav variant="tabs" defaultActiveKey={tab}>
