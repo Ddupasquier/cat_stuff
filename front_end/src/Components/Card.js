@@ -12,15 +12,6 @@ function Card({ owner, owner: { name, age, city, state, image, cats } }) {
     );
   }
 
-  const allCats = cats.map((cat) => {
-    return (
-      <span key={cat.id}>
-        {cat.name}
-        <br />
-      </span>
-    );
-  });
-
   return (
     <>
       <OwnerCard style={{ backgroundColor: "pink" }} className="ownercard">
@@ -31,7 +22,7 @@ function Card({ owner, owner: { name, age, city, state, image, cats } }) {
             {age} <br />
             {city}, {state}
           </OwnerCard.Text>
-          <OwnerCat name={name} allCats={allCats} />
+          <OwnerCat name={name} cats={cats} />
         </OwnerCard.Body>
       </OwnerCard>
     </>

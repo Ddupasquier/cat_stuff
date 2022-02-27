@@ -1,12 +1,20 @@
 import React, { useState } from "react";
-// import Button from "react-bootstrap/Button"
 import Modal from "react-bootstrap/Modal";
 
-function OwnerCat({ name, allCats }) {
+function OwnerCat({ name, cats }) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const allCats = cats.map((cat) => {
+    return (
+      <span key={cat.id}>
+        {cat.name}
+        <br />
+      </span>
+    );
+  });
 
   return (
     <>
