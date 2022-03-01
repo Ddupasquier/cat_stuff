@@ -27,8 +27,10 @@ end
 group :development do
   #Faker gem for creating fake data
   gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
-
+  gem 'active_model_serializers'
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
 
+
+gem "byebug", "~> 11.1", :groups => [:development, :test]

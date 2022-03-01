@@ -1,18 +1,15 @@
 class CatOwnersController < ApplicationController
-    before_action :find_cat_owner, only: [:show, :update]
+    before_action :find_cat_owner, only: [:show, :update, :destroy]
     
 
     def index
         owners = CatOwner.all
-        render json: owners, except: [:created_at, :updated_at], include: {cats: {only: [:id, :name, :breed, :age]}}, status: :ok
+        render json: owners, status: :ok
     end
 
     def show
-        if @owner
-            render json: @owner, except: [:id, :created_at, :updated_at], include: {cats: {only: [:id, :name, :breed, :age]}}, status: :ok
-        else
-            render_not_found
-        end
+        @owner
+        render json: @owner, status: :ok
     end
 
     def create
@@ -21,21 +18,26 @@ class CatOwnersController < ApplicationController
     end
 
     def update
-        if @owner.valid?
-            @owner.update(cat_owner_params)
-            render json: @owner, status: :accepted
-        else
-            render_not_found
-        end
+        @owner.valid?
+        @owner.update!(cat_owner_params)
+        render json: @owner, status: :accepted
+    end
+
+    def destroy
+        @owner
+        @owner.destroy
+        head :no_content
     end
 
     private
 
     def cat_owner_params
-        params.permit(:name, :age, :city, :state)
+        params.permit(:name, :age, :city, :state, :image)
     end
 
     def find_cat_owner
         @owner = CatOwner.find_by(id:params[:id])
     end
+
+    
 end

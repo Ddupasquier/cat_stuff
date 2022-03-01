@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :cat_toys, only: [:index, :show, :create, :destroy]
 
-  resources :cat_owners, only: [:index, :show, :create, :update]
+  resources :cat_owners, only: [:index, :show, :create, :update, :destroy]
 
   # get '/cats', to
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

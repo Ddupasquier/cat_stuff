@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
+import { Link } from "react-router-dom";
 
 function OwnerCat({ name, cats }) {
   const [show, setShow] = useState(false);
@@ -9,15 +10,17 @@ function OwnerCat({ name, cats }) {
 
   const allCats = cats.map((cat) => {
     return (
-      <span key={cat.id}>
-        {cat.name}
-        <br />
-      </span>
+      <React.Fragment key={cat.id}>
+        <Link to="">
+          {cat.name}
+          <br />
+        </Link>
+      </React.Fragment>
     );
   });
 
   return (
-    <>
+    <React.Fragment>
       <div className="button shadow">
         <button className="button button2" onClick={handleShow}>
           ...and their kitties!
@@ -36,7 +39,7 @@ function OwnerCat({ name, cats }) {
         </Modal.Header>
         <Modal.Body>{allCats}</Modal.Body>
       </Modal>
-    </>
+    </React.Fragment>
   );
 }
 

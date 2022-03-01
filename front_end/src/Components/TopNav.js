@@ -5,9 +5,9 @@ function TopNav() {
   const [tab, setTab] = useState("/")
 
   return (
-    <Nav variant="pills" defaultActiveKey="/home">
+    <Nav variant="pills" defaultActiveKey="/owners">
   <Nav.Item>
-    <Nav.Link href="/home">Owners</Nav.Link>
+    <Nav.Link href="/owners">Owners</Nav.Link>
   </Nav.Item>
   <Nav.Item>
     <Nav.Link href="/cats" eventKey="link-1">Cats</Nav.Link>
@@ -20,17 +20,6 @@ function TopNav() {
 </Nav>
   )
 
-{/* <Nav variant="tabs" defaultActiveKey={tab}>
-<Nav.Item>
-  <Nav.Link href={tab} onClick={setTab("/")}>Owners</Nav.Link>
-</Nav.Item>
-<Nav.Item>
-  <Nav.Link href={tab} eventKey="link-1" onClick={setTab("/cats")}>Cats</Nav.Link>
-</Nav.Item>
-<Nav.Item>
-  <Nav.Link href={tab} eventKey="link-2" onClick={setTab("/cat_toys")}>Toys</Nav.Link>
-</Nav.Item>
-</Nav> */}
 }
 
 export default TopNav;

@@ -9,52 +9,37 @@ class CatToysController < ApplicationController
         else
         cat_toys = CatToy.all
         end
-        render json: cat_toys, except: [:created_at, :updated_at], status: :ok
+        render json: cat_toys, status: :ok
     end
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     def show
-        if @cat_toy
-            render json: @cat_toy, except: [:created_at, :updated_at], status: :ok
-        else
-            render_not_found
-        end
+        @cat_toy
+        render json: @cat_toy, status: :ok
     end
 
     def create
-        new_cat_toy = CatToy.create(cat_toy_params)
-        if new_cat_toy.valid?
-            render json: new_cat_toy, status: :created
-        else
-            render_incomplete_entry
-        end
+        new_cat_toy = CatToy.create!(cat_toy_params)
+        new_cat_toy.valid?
+        render json: new_cat_toy, status: :created
     end
 
     def update
-        if @cat_toy
-            @cat_toy.update(cat_toy_params)
-            render json: @cat_toy, status: :accepted
-        else
-            render_not_found
-        end
+        @cat_toy
+        @cat_toy.update!(cat_toy_params)
+        render json: @cat_toy, status: :accepted
     end
 
     def increment_likes
-        if @cat_toy
-          @cat_toy.update(likes: @cat_toy.likes + 1)
-          render json: @cat_toy
-        else
-            render_not_found
-        end
+        @cat_toy
+        @cat_toy.update!(likes: @cat_toy.likes + 1)
+        render json: @cat_toy
     end
 
     def destroy
-        if @cat_toy
-          @cat_toy.destroy
-          head :no_content
-        else
-            render_not_found
-        end
+        @cat_toy
+        @cat_toy.destroy
+        head :no_content
     end
 
     private
@@ -66,5 +51,7 @@ class CatToysController < ApplicationController
     def find_cat_toy
         @cat_toy = CatToy.find_by(id:params[:id])
     end
+
+    
 
 end

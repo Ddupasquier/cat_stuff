@@ -3,8 +3,9 @@ import Card from "./Card";
 import { useEffect, useState } from "react";
 import Spinner from "react-bootstrap/Spinner";
 import { Switch, Route } from "react-router-dom";
-import Cats from "./Cats";
-import CatToys from "./CatToys";
+import Cats from "./CatWithToyComponent/Cats";
+import CatToys from "./CatToyComponents/CatToys";
+import SelectedToy from "./SelectedToy";
 
 function Main() {
   const [owners, setOwners] = useState([]);
@@ -33,15 +34,19 @@ function Main() {
     <main>
       <Switch>
         <Route path="/cats">
-          <Cats />
+          <Cats/>
         </Route>
         <Route path="/cat_toys">
-          <CatToys />
+          <CatToys/>
+        </Route>
+        <Route path="/selected_toy">
+          <SelectedToy/>
         </Route>
         <Route path="/">{allOwners}</Route>
         <Route path="*">
           <h1>404: You done goofed</h1>
         </Route>
+        
       </Switch>
     </main>
   );

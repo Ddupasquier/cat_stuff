@@ -31,7 +31,7 @@ puts "Toys..."
 300.times do
   CatToy.create!(
     toy_name: Faker::Game.platform,
-    cat_id: Random.rand(1..12),
+    cat_id: Random.rand(1..50),
     likes: Faker::Number.between(from: 1, to: 50000),
   )
 end
