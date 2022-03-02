@@ -1,11 +1,13 @@
 import React from "react";
-import Card from "./Card";
 import { useEffect, useState } from "react";
-import Spinner from "react-bootstrap/Spinner";
 import { Switch, Route } from "react-router-dom";
+
+import Card from "./OwnerWithCats/Card";
 import Cats from "./CatWithToyComponent/Cats";
 import CatToys from "./CatToyComponents/CatToys";
 import SelectedToy from "./SelectedToy";
+
+import Spinner from "react-bootstrap/Spinner";
 
 function Main() {
   const [owners, setOwners] = useState([]);

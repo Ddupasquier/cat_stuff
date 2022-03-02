@@ -39,6 +39,24 @@ footer {
   box-shadow: 10px 10px 10px;
 }
 
+.catcard {
+  margin: 1%;
+  width: 18%;
+  box-shadow: 10px 10px 18px;
+  font-size: .8rem;
+}
+
+.catcard:hover {
+  margin: 1%;
+  width: 18%;
+  box-shadow: 10px 10px 18px;
+  font-size: .8rem;
+}
+
+.catimg {
+  width: 100%;
+}
+
 .button {
   float: right;
   background: white;
@@ -70,3 +88,4 @@ footer {
   border-radius: 4px;
   margin: 3%;
 }
+
