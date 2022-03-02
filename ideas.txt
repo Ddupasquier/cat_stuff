@@ -1,1 +1,4 @@
 - add sort'n'search
+- sort toys by likes
+- toy links in cats take you to selected toy
+- figure out cats api

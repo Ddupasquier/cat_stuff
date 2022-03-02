@@ -4,11 +4,11 @@ class ApplicationController < ActionController::API
 
     private
 
-    def render_not_found(error)
+    def render_not_found()
         render json: { error: "404 Item Not Found" }, status: :not_found
     end
 
     def render_incomplete_entry(invalid)
-        render json: { errors: invalid.record.errors }, status: :unprocessable_entity
+        render json: { errors: invalid.record.errors.full_messages }, status: :unprocessable_entity
     end
 end

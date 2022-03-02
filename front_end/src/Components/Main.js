@@ -18,6 +18,16 @@ function Main() {
       });
   }, []);
 
+  // useEffect(() => {
+  //   $.ajax({
+  //     url: 'https://randomuser.me/api/',
+  //     dataType: 'json',
+  //     success: function(data) {
+  //       console.log(data);
+  //     }
+  //   });
+  // }, [])
+
   if (owners === null) {
     return (
       <Spinner animation="border" role="status">
@@ -30,6 +40,8 @@ function Main() {
     return <Card owner={owner} key={owner.id} />;
   });
 
+  // console.log(allOwners[1])
+
   return (
     <main>
       <Switch>
@@ -40,7 +52,7 @@ function Main() {
           <CatToys/>
         </Route>
         <Route path="/selected_toy">
-          <SelectedToy/>
+          <SelectedToy />
         </Route>
         <Route path="/">{allOwners}</Route>
         <Route path="*">

@@ -14,13 +14,18 @@ function Card({ owner, owner: { name, age, city, state, image, cats } }) {
 
   return (
     <>
-      <OwnerCard style={{ backgroundColor: "rgb(216, 255, 207)" }} className="ownercard" key={owner.id}>
-        <OwnerCard.Img variant="top" src={image} />
+      <OwnerCard
+        style={{ backgroundColor: "rgb(241, 241, 241)" }}
+        className="ownercard"
+        key={owner.id}
+      >
+        <img src={image} className="imgbg" />
         <OwnerCard.Body>
           <OwnerCard.Title>{name}</OwnerCard.Title>
           <OwnerCard.Text>
             {age} <br />
-            {city}, {state}
+            {city},<br />
+            {state}
           </OwnerCard.Text>
           <OwnerCat name={name} cats={cats} />
         </OwnerCard.Body>

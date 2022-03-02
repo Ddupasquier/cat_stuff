@@ -8,8 +8,8 @@ class CatOwnersController < ApplicationController
     end
 
     def show
-        @owner
-        render json: @owner, status: :ok
+        owner = CatOwner.find_by(id: params[:id])
+        render json: owner, serializer: OwnerscatsSerializer
     end
 
     def create

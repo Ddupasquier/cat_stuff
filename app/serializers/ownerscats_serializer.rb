@@ -1,3 +1,4 @@
 class OwnerscatsSerializer < ActiveModel::Serializer
-  attributes :name, :breed
+  attributes :name, :age, :city, :state, :image
+  # has_many :cats, serializer: CatSummarySerializer
 end

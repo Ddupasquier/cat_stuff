@@ -1,25 +1,21 @@
+import Navbar from "react-bootstrap/Navbar";
+import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
-import React, { useState } from "react";
+import React from "react";
 
 function TopNav() {
-  const [tab, setTab] = useState("/")
-
   return (
-    <Nav variant="pills" defaultActiveKey="/owners">
-  <Nav.Item>
-    <Nav.Link href="/owners">Owners</Nav.Link>
-  </Nav.Item>
-  <Nav.Item>
-    <Nav.Link href="/cats" eventKey="link-1">Cats</Nav.Link>
-  </Nav.Item>
-  <Nav.Item>
-    <Nav.Link href="/cat_toys" eventKey="link-2">
-      Toys
-    </Nav.Link>
-  </Nav.Item>
-</Nav>
-  )
-
+    <Navbar bg="light" variant="light">
+      <Container>
+        <Navbar.Brand href=""><strong>Cats</strong> and their <i><u>People</u></i></Navbar.Brand>
+        <Nav className="me-auto">
+          <Nav.Link href="/cat_owners" className="navbtn">Home</Nav.Link>
+          <Nav.Link href="/cats" className="navbtn">Cats</Nav.Link>
+          <Nav.Link href="/cat_toys" className="navbtn">Cat Toys</Nav.Link>
+        </Nav>
+      </Container>
+    </Navbar>
+  );
 }
 
 export default TopNav;
