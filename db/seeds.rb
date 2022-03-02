@@ -9,8 +9,8 @@ puts "Owners..."
 20.times do
   CatOwner.create!(
     image: Faker::Avatar.image,
-    name: Faker::TvShows::RickAndMorty.character,
-    age: Faker::Number.between(from: 20, to: 90),
+    name: Faker::Movies::HarryPotter.character,
+    age: Faker::Number.between(from: 20, to: 70),
     city:Faker::Games::DnD.city,
     state:Faker::Games::DnD.background,
   )

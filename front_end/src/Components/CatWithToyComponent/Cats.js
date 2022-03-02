@@ -4,9 +4,6 @@ import CatCard from "../CatWithToyComponent/CatCard";
 function Cats() {
   const [cats, setCats] = useState([]);
   const [catimgs, setCatimgs] = useState([]);
-  console.log(catimgs);
-
-  
 
   useEffect(() => {
     fetch("/cats")
@@ -17,9 +14,10 @@ function Cats() {
       });
   }, []);
 
-  if (catimgs === undefined) {
-    return <h1>Loading</h1>
+  if (catimgs.length === 0) {
+    return <h1>Loading</h1>;
   }
+  console.log(catimgs);
 
   function getCatImgs(catsLength) {
     fetch(

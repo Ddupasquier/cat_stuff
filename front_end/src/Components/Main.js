@@ -30,6 +30,8 @@ function Main() {
   //   });
   // }, [])
 
+  
+
   if (owners === null) {
     return (
       <Spinner animation="border" role="status">
