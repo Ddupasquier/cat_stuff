@@ -2,19 +2,53 @@ puts "Deleting old data..."
 CatToy.delete_all
 CatOwner.delete_all
 Cat.delete_all
+User.delete_all
 
 puts "Creating seed data..."
 
+puts "Users..."
+  User.create!(username:"Dylan Dupasquier", password: "flatironschool")
+  User.create!(username:Faker::Internet.username, password: Faker::Internet.password)
+  User.create!(username:Faker::Internet.username, password: Faker::Internet.password)
+  User.create!(username:Faker::Internet.username, password: Faker::Internet.password)
+  User.create!(username:Faker::Internet.username, password: Faker::Internet.password)
+  User.create!(username:Faker::Internet.username, password: Faker::Internet.password)
+  User.create!(username:Faker::Internet.username, password: Faker::Internet.password)
+  User.create!(username:Faker::Internet.username, password: Faker::Internet.password)
+  User.create!(username:Faker::Internet.username, password: Faker::Internet.password)
+  User.create!(username:Faker::Internet.username, password: Faker::Internet.password)
+  User.create!(username:Faker::Internet.username, password: Faker::Internet.password)
+  User.create!(username:Faker::Internet.username, password: Faker::Internet.password)
+  User.create!(username:Faker::Internet.username, password: Faker::Internet.password)
+  User.create!(username:Faker::Internet.username, password: Faker::Internet.password)
+  User.create!(username:Faker::Internet.username, password: Faker::Internet.password)
+  User.create!(username:Faker::Internet.username, password: Faker::Internet.password)
+  User.create!(username:Faker::Internet.username, password: Faker::Internet.password)
+  User.create!(username:Faker::Internet.username, password: Faker::Internet.password)
+  User.create!(username:Faker::Internet.username, password: Faker::Internet.password)
+  User.create!(username:Faker::Internet.username, password: Faker::Internet.password)
+
 puts "Owners..."
-20.times do
-  CatOwner.create!(
-    image: Faker::Avatar.image,
-    name: Faker::TvShows::RickAndMorty.character,
-    age: Faker::Number.between(from: 20, to: 70),
-    city:Faker::Games::DnD.city,
-    state:Faker::Games::DnD.background,
-  )
-end
+  CatOwner.create!(image: Faker::Avatar.image, name: Faker::TvShows::RickAndMorty.character, age: Faker::Number.between(from: 20, to: 70), city:Faker::Games::DnD.city, state:Faker::Games::DnD.background, user_id: 1)
+  CatOwner.create!(image: Faker::Avatar.image, name: Faker::TvShows::RickAndMorty.character, age: Faker::Number.between(from: 20, to: 70), city:Faker::Games::DnD.city, state:Faker::Games::DnD.background, user_id: 2)
+  CatOwner.create!(image: Faker::Avatar.image, name: Faker::TvShows::RickAndMorty.character, age: Faker::Number.between(from: 20, to: 70), city:Faker::Games::DnD.city, state:Faker::Games::DnD.background, user_id: 3)
+  CatOwner.create!(image: Faker::Avatar.image, name: Faker::TvShows::RickAndMorty.character, age: Faker::Number.between(from: 20, to: 70), city:Faker::Games::DnD.city, state:Faker::Games::DnD.background, user_id: 4)
+  CatOwner.create!(image: Faker::Avatar.image, name: Faker::TvShows::RickAndMorty.character, age: Faker::Number.between(from: 20, to: 70), city:Faker::Games::DnD.city, state:Faker::Games::DnD.background, user_id: 5)
+  CatOwner.create!(image: Faker::Avatar.image, name: Faker::TvShows::RickAndMorty.character, age: Faker::Number.between(from: 20, to: 70), city:Faker::Games::DnD.city, state:Faker::Games::DnD.background, user_id: 6)
+  CatOwner.create!(image: Faker::Avatar.image, name: Faker::TvShows::RickAndMorty.character, age: Faker::Number.between(from: 20, to: 70), city:Faker::Games::DnD.city, state:Faker::Games::DnD.background, user_id: 7)
+  CatOwner.create!(image: Faker::Avatar.image, name: Faker::TvShows::RickAndMorty.character, age: Faker::Number.between(from: 20, to: 70), city:Faker::Games::DnD.city, state:Faker::Games::DnD.background, user_id: 8)
+  CatOwner.create!(image: Faker::Avatar.image, name: Faker::TvShows::RickAndMorty.character, age: Faker::Number.between(from: 20, to: 70), city:Faker::Games::DnD.city, state:Faker::Games::DnD.background, user_id: 9)
+  CatOwner.create!(image: Faker::Avatar.image, name: Faker::TvShows::RickAndMorty.character, age: Faker::Number.between(from: 20, to: 70), city:Faker::Games::DnD.city, state:Faker::Games::DnD.background, user_id: 10)
+  CatOwner.create!(image: Faker::Avatar.image, name: Faker::TvShows::RickAndMorty.character, age: Faker::Number.between(from: 20, to: 70), city:Faker::Games::DnD.city, state:Faker::Games::DnD.background, user_id: 11)
+  CatOwner.create!(image: Faker::Avatar.image, name: Faker::TvShows::RickAndMorty.character, age: Faker::Number.between(from: 20, to: 70), city:Faker::Games::DnD.city, state:Faker::Games::DnD.background, user_id: 12)
+  CatOwner.create!(image: Faker::Avatar.image, name: Faker::TvShows::RickAndMorty.character, age: Faker::Number.between(from: 20, to: 70), city:Faker::Games::DnD.city, state:Faker::Games::DnD.background, user_id: 13)
+  CatOwner.create!(image: Faker::Avatar.image, name: Faker::TvShows::RickAndMorty.character, age: Faker::Number.between(from: 20, to: 70), city:Faker::Games::DnD.city, state:Faker::Games::DnD.background, user_id: 14)
+  CatOwner.create!(image: Faker::Avatar.image, name: Faker::TvShows::RickAndMorty.character, age: Faker::Number.between(from: 20, to: 70), city:Faker::Games::DnD.city, state:Faker::Games::DnD.background, user_id: 15)
+  CatOwner.create!(image: Faker::Avatar.image, name: Faker::TvShows::RickAndMorty.character, age: Faker::Number.between(from: 20, to: 70), city:Faker::Games::DnD.city, state:Faker::Games::DnD.background, user_id: 16)
+  CatOwner.create!(image: Faker::Avatar.image, name: Faker::TvShows::RickAndMorty.character, age: Faker::Number.between(from: 20, to: 70), city:Faker::Games::DnD.city, state:Faker::Games::DnD.background, user_id: 17)
+  CatOwner.create!(image: Faker::Avatar.image, name: Faker::TvShows::RickAndMorty.character, age: Faker::Number.between(from: 20, to: 70), city:Faker::Games::DnD.city, state:Faker::Games::DnD.background, user_id: 18)
+  CatOwner.create!(image: Faker::Avatar.image, name: Faker::TvShows::RickAndMorty.character, age: Faker::Number.between(from: 20, to: 70), city:Faker::Games::DnD.city, state:Faker::Games::DnD.background, user_id: 19)
+  CatOwner.create!(image: Faker::Avatar.image, name: Faker::TvShows::RickAndMorty.character, age: Faker::Number.between(from: 20, to: 70), city:Faker::Games::DnD.city, state:Faker::Games::DnD.background, user_id: 20)
 
 puts "Kitties..."
 50.times do

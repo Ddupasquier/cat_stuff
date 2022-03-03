@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
   # resources :cat_toys
   patch "/cat_toys/:id/like", to: "cat_toys#increment_likes"
 
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
 
   resources :cat_owners, only: [:index, :show, :create, :update, :destroy]
 
+  resources :users
 
   # SESSION AND COOKIE
   post "/login", to: "sessions#create"
