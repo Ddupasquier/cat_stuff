@@ -22,7 +22,7 @@ function OwnerCat({ name, cats }) {
   return (
     <React.Fragment>
       <div className="button shadow">
-        <button className="button button2" onClick={handleShow}>
+        <button className="button" onClick={handleShow}>
           ...and their kitties!
         </button>
       </div>

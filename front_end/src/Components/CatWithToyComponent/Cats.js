@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
+import Spinner from "react-bootstrap/Spinner";
+
 import CatCard from "../CatWithToyComponent/CatCard";
+
 
 function Cats() {
   const [cats, setCats] = useState([]);
@@ -15,9 +18,13 @@ function Cats() {
   }, []);
 
   if (catimgs.length === 0) {
-    return <h1>Loading</h1>;
+    return (
+      <Spinner animation="border" role="status" className="toCenter">
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>
+    );
   }
-  console.log(catimgs);
+  // console.log(catimgs);
 
   function getCatImgs(catsLength) {
     fetch(

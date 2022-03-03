@@ -13,9 +13,10 @@ Rails.application.routes.draw do
 
   resources :cat_owners, only: [:index, :show, :create, :update, :destroy]
 
-  # get '/cats', to
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  # SESSION AND COOKIE
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
+  get "/me", to: "cat_owners#show"
+  
 end

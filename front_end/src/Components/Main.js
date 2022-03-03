@@ -9,6 +9,7 @@ import SelectedToy from "./SelectedToy";
 
 import Spinner from "react-bootstrap/Spinner";
 
+
 function Main() {
   const [owners, setOwners] = useState([]);
 
@@ -34,7 +35,7 @@ function Main() {
 
   if (owners === null) {
     return (
-      <Spinner animation="border" role="status">
+      <Spinner animation="border" role="status" className="toCenter">
         <span className="visually-hidden">Loading...</span>
       </Spinner>
     );
@@ -47,7 +48,8 @@ function Main() {
   // console.log(allOwners[1])
 
   return (
-    <main>
+   <><main>
+    
       <Switch>
         <Route path="/cats">
           <Cats/>
@@ -64,7 +66,10 @@ function Main() {
         </Route>
         
       </Switch>
-    </main>
+      </main>
+      
+      </>
+    
   );
 }
 

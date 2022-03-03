@@ -9,7 +9,7 @@ puts "Owners..."
 20.times do
   CatOwner.create!(
     image: Faker::Avatar.image,
-    name: Faker::Movies::HarryPotter.character,
+    name: Faker::TvShows::RickAndMorty.character,
     age: Faker::Number.between(from: 20, to: 70),
     city:Faker::Games::DnD.city,
     state:Faker::Games::DnD.background,
@@ -19,7 +19,7 @@ end
 puts "Kitties..."
 50.times do
   Cat.create!(
-    name: Faker::Movies::StarWars.character,
+    name: Faker::Fantasy::Tolkien.character,
     breed: Faker::Games::DnD.monster,
     age: Faker::Number.between(from: 1, to: 20),
     likes: Faker::Number.between(from: 1, to: 50000),

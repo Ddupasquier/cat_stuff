@@ -25,7 +25,7 @@ class CatOwnersController < ApplicationController
 
     def destroy
         @owner
-        @owner.destroy
+        @owner.destroy!
         head :no_content
     end
 

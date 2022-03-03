@@ -16,7 +16,7 @@ function CatToys() {
 
   if (toys === null) {
     return (
-      <Spinner animation="border" role="status">
+      <Spinner animation="border" role="status" className="toCenter">
         <span className="visually-hidden">Loading...</span>
       </Spinner>
     );

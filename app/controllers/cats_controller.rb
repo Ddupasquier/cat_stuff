@@ -9,8 +9,15 @@ class CatsController < ApplicationController
     end
 
     def show
-        @cat
-        render json: @cat, status: :ok
+        # session[:page_views] ||= 0
+        # session[:page_views] += 1
+
+        # if session[:page_views] <=10
+            @cat
+            render json: @cat, status: :ok
+        # else
+        #     render json: { error: "Maximum Cats Viewed" }, status: :unauthorized
+        # end
     end
 
     def create

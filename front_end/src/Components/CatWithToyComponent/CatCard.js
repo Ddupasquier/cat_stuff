@@ -15,7 +15,7 @@ function CatCard({ img, cat: { name, breed, age, cat_toys } }) {
   return (
     <>
       <OwnerCard
-        style={{ backgroundColor: "rgb(216, 255, 207)" }}
+        style={{ backgroundColor: "rgb(241, 241, 241)" }}
         className="catcard"
       >
         <OwnerCard.Body>

@@ -1,3 +1,3 @@
 class CatstoysSerializer < ActiveModel::Serializer
-  attributes :toy_name
+  attributes :id, :toy_name
 end

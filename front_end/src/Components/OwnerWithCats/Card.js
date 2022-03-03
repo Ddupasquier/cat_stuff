@@ -6,7 +6,7 @@ import OwnerCat from "./OwnerCat";
 function Card({ owner, owner: { name, age, city, state, image, cats } }) {
   if (owner === null) {
     return (
-      <Spinner animation="border" role="status">
+      <Spinner animation="border" role="status" className="toCenter">
         <span className="visually-hidden">Loading...</span>
       </Spinner>
     );
@@ -20,15 +20,15 @@ function Card({ owner, owner: { name, age, city, state, image, cats } }) {
         key={owner.id}
       >
         <img src={image} className="imgbg" />
-        <OwnerCard.Body>
-          <OwnerCard.Title>{name}</OwnerCard.Title>
-          <OwnerCard.Text>
+        <div className="cardtextcont">
+          <h6>{name}</h6>
+          <p>
             {age} <br />
             {city},<br />
             {state}
-          </OwnerCard.Text>
+          </p>
           <OwnerCat name={name} cats={cats} />
-        </OwnerCard.Body>
+        </div>
       </OwnerCard>
     </>
   );
