@@ -4,7 +4,7 @@ import OwnerCard from "react-bootstrap/Card";
 function SelectedToy() {
   return (
     <>
-      <OwnerCard style={{ backgroundColor: "pink" }} className="">
+      <OwnerCard style={{ backgroundColor: "rgb(230, 230, 230)" }} className="singlecard">
         <OwnerCard.Body>
           <OwnerCard.Title>Stuff</OwnerCard.Title>
           Words

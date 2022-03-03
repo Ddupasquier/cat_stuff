@@ -8,10 +8,10 @@ function ToyCard({ toy_name, toy_likes }) {
     <>
       <OwnerCard
         style={{ backgroundColor: "rgb(220, 220, 220)" }}
-        className="ownercard"
+        className="toycard"
       >
         <OwnerCard.Body>
-          <OwnerCard.Title>{toy_name}</OwnerCard.Title>
+          <h6>{toy_name}</h6>
           Likes: {toy_likes}
         </OwnerCard.Body>
       </OwnerCard>

@@ -30,6 +30,6 @@ class UsersController < ApplicationController
     end
 
     def find_user
-        @user = CatToy.find_by(id:params[:id])
+        @user = User.find_by(id:params[:id])
     end
 end
