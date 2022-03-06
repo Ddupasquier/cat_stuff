@@ -19,6 +19,6 @@ Rails.application.routes.draw do
   # SESSION AND COOKIE
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
-  get "/me", to: "user#show"
+  get "/me", to: "users#show"
   
 end

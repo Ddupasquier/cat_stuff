@@ -2,8 +2,23 @@ import React from "react";
 import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 
-function Login({}) {
+function Login({ onLogin }) {
   const [show, setShow] = useState(false);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    fetch("/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ username }),
+    })
+      .then((r) => r.json())
+      .then((user) => onLogin(user));
+  }
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -23,11 +38,21 @@ function Login({}) {
           <h3>Login</h3>
         </Modal.Header>
         <Modal.Body>
-          <form className="loginform">
-            <h1>Let's Get Started By Logging In!</h1>
-            <input type="text" placeholder="Username"></input>
+          <form  onSubmit={handleSubmit} className="loginform">
+            <p className="medfont">Let's Get Started By Logging In!</p>
+            <input
+              type="text"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            ></input>
             <br />
-            <input type="text" placeholder="Password"></input>
+            <input
+              type="text"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setUsername(e.target.value)}
+            ></input>
             <br />
             <button type="submit" className="button">
               Login

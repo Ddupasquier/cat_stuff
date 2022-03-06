@@ -5,7 +5,7 @@ import { Switch, Route } from "react-router-dom";
 import Card from "./OwnerWithCats/Card";
 import Cats from "./CatWithToyComponent/Cats";
 import CatToys from "./CatToyComponents/CatToys";
-import SelectedToy from "./SelectedToy";
+import SelectedCard from "./SelectedCard";
 
 import Spinner from "react-bootstrap/Spinner";
 
@@ -58,7 +58,7 @@ function Main() {
           <CatToys/>
         </Route>
         <Route path="/selected_toy">
-          <SelectedToy />
+          <SelectedCard />
         </Route>
         <Route path="/">{allOwners}</Route>
         <Route path="*">
