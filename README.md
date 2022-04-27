@@ -10,9 +10,11 @@ HTML5<br>
 CSS
 
 ## Setup
-'npm i' front_end
-'bundle i' app
+
+'npm i' front_end<br>
+'bundle i' app<br>
 foreman start -f Procfile.dev
+
 #### Front End
 
 cd cat-stuff/front_end<br>
