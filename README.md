@@ -1,21 +1,26 @@
-# README
-Things you may want to cover:
+## Overview
 
-* Ruby version
-ruby 2.7.4p191
-* System dependencies
+The **Cat-Stuff** app was created in order to practice associations using ActiveRecord and Ruby on Rails, using a SQLite database. In this app there is a list of 'owners' who <ins>has_many</ins> cats and each cat <ins>has_many</ins> toys.
 
-* Configuration
+## Tech Stack
 
-* Database creation
-Rails
-* Database initialization
+React<br>
+Ruby on Rails<br>
+HTML5<br>
+CSS
+
+## Setup
+'npm i' front_end
+'bundle i' app
 foreman start -f Procfile.dev
+#### Front End
 
-* How to run the test suite
+cd cat-stuff/front_end<br>
+To install the dependencies run 'npm i'<br>
+Then run 'npm start' to run the front end at 'localhost:4000'
 
-* Services (job queues, cache servers, search engines, etc.)
+#### Back End
 
-* Deployment instructions
-
-* ...
+cd cat-stuff/app<br>
+To install dependencies run 'bundle i' in your terminal<br>
+Then run 'rails s'
